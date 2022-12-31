@@ -15,14 +15,14 @@
   <div class="container">
     <div class="row bg-success m-1 block">
         <div class="text-center col-md-12">
-            <h1><i class="fab fa-product-hunt"></i> CRUD OPeration <span id="countpro"></span></h1>
+            <h1><i class="fab fa-product-hunt"></i> CRUD OPeration <span id="countProduct"></span></h1>
         </div>
     </div>
     <!-- Category -->
     <div class="row bg-secondary m-1 block">
         <div class="col-md-6 col-sm-12">
             <div>
-                <label for="" id="lbcata">Category : </label>
+                <label for="" id="lbCata">Category :</label>
                 <select id="ddlCategory" class="form-control">
                     
                 </select>
@@ -48,36 +48,36 @@
     <!-- Product -->
     <div class="row bg-secondary m-1 block">
         <div class="col-md-4 col-sm-12">
-            <label fid="lbPro">Product Name : *</label>
+            <label id="lbProduct">Product Name : *</label>
             <input type="text" placeholder="Enter Product Name" class="form-control text-center" id="product">
         </div>
 
         <div class="col-md-2 col-sm-12">
-            <label fid="lbPro">Quantity : *</label>
-            <input type="number" value="0" class="form-control text-center" id="quantity">
+            <label id="lbQuantity">Quantity : *</label>
+            <input type="number" value="0" class="form-control text-center" id="quantity" onkeyup="getTotalProduct()" onchange="getTotalProduct()">
         </div>
 
 
         <div class="col-md-2 col-sm-12">
-            <label fid="lbPro">Price : *</label>
-            <input type="number" value="0" class="form-control text-center" id="price">
+            <label id="lbPrice">Price : *</label>
+            <input type="number" value="0" class="form-control text-center" id="price" onkeyup="getTotalProduct()" onchange="getTotalProduct()">
         </div>
 
         <div class="col-md-2 col-sm-12">
-            <label fid="lbPro">Discount </label>
-            <input type="number" value="0" class="form-control text-center" id="discount">
+            <label id="lbDiscount">Discount </label>
+            <input type="number" value="0" class="form-control text-center" id="discount" onkeyup="getTotalProduct()" onchange="getTotalProduct()">
         </div>
 
         <div class="col-md-2 col-sm-12">
-            <label fid="lbPro">Total</label>
+            <label id="lbTotal">Total</label>
             <input type="number" value="0" class="form-control bg-danger text-center" disabled id="total">
         </div>
 
-        <div class="text-center col-md-12">
-            <button class="btn btn-dark w-25" style="margin-top: 10px;">
+        <div class="text-center col-md-12 my-3">
+            <button class="btn btn-dark w-25" onclick="resetProduct()">
                 <i class="fas fa-trash-restore"></i>
             </button>
-            <button class="btn btn-success w-25" style="margin-top: 10px;">
+            <button class="btn btn-success w-25" onclick="validationProduct()" id="btnSave">
                 <i class="fas fa-download"></i>
             </button>
 
@@ -101,92 +101,7 @@
                         <td class="col-2">Action</td>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Samsung</td>
-                        <td>Samsung 1 52 s</td>
-                        <td>1</td>
-                        <td>5500</td>
-                        <td>10 %</td>
-                        <td>5500</td>
-                                                <td>
-                            <button class="btn btn-info">
-                                <i class="fas fa-edit"></i>
-                            </button>
-                            <button class="btn btn-danger">
-                                <i class="fas fa-trash"></i>
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Samsung</td>
-                        <td>Samsung 1 52 s</td>
-                        <td>1</td>
-                        <td>5500</td>
-                        <td>10 %</td>
-                        <td>5500</td>
-                        <td>
-                            <button class="btn btn-info">
-                                <i class="fas fa-edit"></i>
-                            </button>
-                            <button class="btn btn-danger">
-                                <i class="fas fa-trash"></i>
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Samsung</td>
-                        <td>Samsung 1 52 s</td>
-                        <td>1</td>
-                        <td>5500</td>
-                        <td>10 %</td>
-                        <td>5500</td>
-                        <td>
-                            <button class="btn btn-info">
-                                <i class="fas fa-edit"></i>
-                            </button>
-                            <button class="btn btn-danger">
-                                <i class="fas fa-trash"></i>
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Samsung</td>
-                        <td>Samsung 1 52 s</td>
-                        <td>1</td>
-                        <td>5500</td>
-                        <td>10 %</td>
-                        <td>5500</td>
-                        <td>
-                            <button class="btn btn-info">
-                                <i class="fas fa-edit"></i>
-                            </button>
-                            <button class="btn btn-danger">
-                                <i class="fas fa-trash"></i>
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Samsung</td>
-                        <td>Samsung 1 52 s</td>
-                        <td>1</td>
-                        <td>5500</td>
-                        <td>10 %</td>
-                        <td>5500</td>
-                        <td>
-                            <button class="btn btn-info">
-                                <i class="fas fa-edit"></i>
-                            </button>
-                            <button class="btn btn-danger">
-                                <i class="fas fa-trash"></i>
-                            </button>
-                        </td>
-                    </tr>
+                <tbody id="bodyProduct">
                 </tbody>
             </table>
         </div>
